@@ -1,0 +1,68 @@
+html, body {
+    background-color: #f3f3f3;
+}
+
+.container {
+    width: 1200px;
+    margin: 20px auto;
+}
+
+.navlist {
+    background-color: #FFF;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.navlist li {
+    float: left;
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.cardlist {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardlist .card {
+    width: 232px;
+    height: 360px;
+    margin-right: 10px;
+    background-color: #FFF;
+    margin-bottom: 10px;
+    transition: linear .2s;
+}
+
+.cardlist .card img {
+    width: 180px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 26px;
+}
+
+.cardlist .card:nth-child(5n) {
+    margin-right: 0;
+}
+
+.cardlist .card h2 {
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.cardlist .card p {
+    font-size: 14px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.07);
+    transform: translate3d(0px, -2px, 0px);
+}

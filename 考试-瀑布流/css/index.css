@@ -1,0 +1,48 @@
+html, body {
+    background-color: #f4f4f4;
+}
+
+.context {
+    width: 760px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.context .column {
+    box-sizing: border-box;
+    width: 240px;
+}
+
+.context .column .card {
+    background-color: #ffffff;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-shadow: 3px 3px 10px 0 #666666;
+    border-radius: 6px;
+}
+
+.lazyImageBox {
+    background: url("../images/default.gif") no-repeat #f4f4f4 center center;
+    overflow: hidden;
+}
+
+.lazyImageBox img {
+    width: 100%;
+    opacity: 0;
+    transition: opacity .3s linear;
+    border-radius: 3px;
+    
+}
+
+.card p {
+    color: #333333;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 6px;
+}
+
+.card a {
+    display: block;
+}

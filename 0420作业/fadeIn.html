@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+
+        #box {
+            width: 500px;
+            height: 500px;
+            background: #ffda43;
+            cursor: pointer;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="box"></div>
+    </div>
+
+    <script>
+        let fadeIn = function fadeIn(ele) {
+            let step = 1 / (1000 / 20);
+            let element = document.querySelector(ele);
+            let add = 0;
+            let timer = setInterval(() => {
+                add += step;
+                if (add > 1) {
+                    add = 1;
+                    clearInterval(timer);
+                }
+                element.style.opacity = add;
+            }, 20);
+        }
+
+        fadeIn("#box");
+    </script>
+</body>
+
+</html>

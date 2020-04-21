@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 1000%;
+            background: -webkit-linear-gradient(top, #4286f4, #373B44, rgb(17, 48, 119), rgb(41, 53, 80));
+        }
+
+        #btn {
+            width: 100px;
+            height: 100px;
+            font-size: 18px;
+            border-radius: 50px;
+            position: fixed;
+            right: 0;
+            bottom: 100px;
+            border: 0 solid white;
+            display: none;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">回到底部</button>
+
+
+    <script>
+
+
+
+        let btn = document.querySelector('#btn');
+
+
+        // 
+        window.onscroll = function () {
+            // 卷去的高度
+            let sH = document.documentElement.scrollTop;
+            // 屏幕的高度
+            let cH = document.documentElement.clientHeight;
+
+            if (sH >= cH) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+
+            // console.log(max);
+        }
+
+        btn.onclick = function () {
+            if (this.isGoing) return;
+            this.isGoing = true;
+            let max = document.documentElement.scrollTop;
+            let step = document.documentElement.scrollTop = max / (1000 / 20);
+            console.log(max);
+            let timer = setInterval(() => {
+                max -= step;
+                // 把修改后的值的重新赋值给滚动条
+                document.documentElement.scrollTop = max;
+                // console.log(max);
+                if (max <= 0) {
+                    max = 0;
+                    clearInterval(timer);
+                    this.isGoing = false;
+                }
+            }, 20)
+
+        }
+
+    </script>
+</body>
+
+</html>

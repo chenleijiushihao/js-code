@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选项卡插件</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        #tab1 {
+            width: 500px;
+        }
+
+        #tab1 div {
+            height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-box" id="tab1">
+        <ul class="tab-title clearfix">
+            <li class="active">编程</li>
+            <li>读书</li>
+            <li>运动</li>
+        </ul>
+        <div class="active">编程可以使我“赚取高薪”</div>
+        <div>读书可以使我“修身养性”</div>
+        <div>运动可以使我“身体健康”</div>
+    </div>
+
+    <!-- js -->
+    <script src="js/index.js"></script>
+    <script>
+        tabPlugin("#tab1");
+    </script>
+</body>
+
+</html>

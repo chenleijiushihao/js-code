@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0;maximum-scale=1.0; minimum-scale=1.0;user-scalable=no;">
+    <meta name="description " content=" ">
+    <meta name="keywords " content=" ">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div id="box">
+        <ul class="list">
+            <li class="slide">
+                <img src="https://images.pexels.com/photos/3683087/pexels-photo-3683087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    alt="">
+            </li>
+            <li class="slide">
+                <img src="https://images.pexels.com/photos/1741761/pexels-photo-1741761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    alt="">
+            </li>
+            <li class="slide">
+                <img src="https://images.pexels.com/photos/934121/pexels-photo-934121.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                    alt="">
+            </li>
+            <li class="slide">
+                <img src="https://images.pexels.com/photos/2769274/pexels-photo-2769274.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                    alt="">
+            </li>
+            <li class="slide">
+                <img src="https://images.pexels.com/photos/3683087/pexels-photo-3683087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    alt="">
+            </li>
+        </ul>
+        <div class="btn_box">
+            <div class="left_btn"> &lt; </div>
+            <div class="right_btn"> > </div>
+        </div>
+        <div class="pagination">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+
+
+
+
+    <!--  <script>
+        //获取元素
+        let box = document.querySelector('#box');
+        let ul = document.querySelector('.list ');
+        let uls = ul.querySelectorAll('li');
+        console.log(uls)
+        let leftBtn = document.querySelector('.left_btn');
+        let rightBtn = document.querySelector('.right_btn');
+        let timer = null;
+        let start = 0;
+        let roo = document.querySelector('.round');
+        let lis = roo.querySelectorAll('li');
+        let len = uls.length;
+
+        function move() {
+            timer = setInterval(() => {
+                start -= 1000;
+                if (start < -4000) {
+                    start = 0;
+                    ul.style.transition = 'none';
+                    ul.style.transform = `translateX(${start}px)`;
+                    // 读写分离
+                    let n = ul.offsetHeight;
+                    start -= 1000;
+                    ul.style.transition = "all 0.3s";
+                } else {
+                    ul.style.transition = "all 0.3s";
+                }
+                ul.style.transform = `translateX(${start}px)`;
+            }, 2000)
+            roundFouc();
+        }
+        move();
+        // 滑过盒子 清除定时器
+        box.onmouseenter = function () {
+            clearInterval(timer);
+        }
+        // 离开盒子 重新启动定时器
+        box.onmouseleave = function () {
+            move();
+        }
+
+        rightBtn.onclick = function () {
+            start -= 1000;
+            if (start < -4000) {
+                start = 0;
+                ul.style.transition = 'none';
+                ul.style.transform = `translateX(${start}px)`;
+                let n = ul.offsetHeight;
+                start -= 1000;
+                ul.style.transition = "all 0.3s";
+            } else {
+                ul.style.transition = "all 0.3s";
+            }
+            ul.style.transform = `translateX(${start}px)`;
+        }
+
+        leftBtn.onclick = function () {
+            start += 1000;
+            if (start > 0) {
+                start = -4000;
+                ul.style.transition = 'none';
+                ul.style.transform = `translateX(${start}px)`;
+                let n = ul.offsetHeight;
+                start += 1000;
+                ul.style.transition = "all 0.3s";
+            } else {
+                ul.style.transition = "all 0.3s";
+            }
+            ul.style.transform = `translateX(${start}px)`;
+        }
+        // 焦点对齐
+        function roundFouc() {
+            let step = start;
+            Array.from(lis).forEach((item, index) => {
+                if (index === step) {
+                    item.className = 'active ';
+                    return;
+                }
+                item.className = "";
+            })
+
+        }
+    </script> -->
+</body>
+
+</html>

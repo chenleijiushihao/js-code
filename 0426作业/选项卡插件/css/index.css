@@ -1,0 +1,41 @@
+.tab-box {
+    /* 
+     * 需要用户后期自己配置的样式
+     * width
+     * height
+    */
+    margin: 20px auto;
+}
+
+.tab-box .tab-title {
+    position: relative;
+    top: 1px;
+}
+
+.tab-box .tab-title li {
+    float: left;
+    margin-right: 10px;
+    padding: 0 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    border: 1px solid #AAA;
+    background: #f6f7fb;
+    cursor: pointer;
+}
+
+.tab-box .tab-title li.active {
+    background-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+.tab-box div {
+    border: 1px solid #AAA;
+    background: #FFF;
+    display: none;
+    padding: 10px;
+}
+
+.tab-box div.active {
+    display: block;
+}

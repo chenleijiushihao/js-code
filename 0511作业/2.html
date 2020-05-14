@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .page {
+            display: none;
+            /* 其他样式省略 */
+        }
+
+        .page.cur {
+            display: block;
+        }
+
+        /* 其他样式省略 */
+    </style>
+</head>
+
+<body>
+    <article class="container">
+        <section id="page1" class="page cur">第一页</section>
+        <section id="page2" class="page">第二页</section>
+        <section id="page3" class="page">第三页</section>
+    </article>
+    <nav id="nav" class="bottom-nav">
+        <ul>
+            <li>第一页</li>
+            <li>第二页</li>
+            <li>第三页</li>
+        </ul>
+    </nav>
+
+
+    <script>
+        window.onload = function () {
+            var nav = document.getElementById('nav');
+            var navLi = nav.getElementsByTagName('li');
+            for (var i = 0, len = navLi.length; i < len; i++) {
+                (function (i) {
+                    navLi[i].onclick = function () { //点击nav中的li，改变hash值
+    
+                        location.hash = 'page' + (i + 1);
+                    }
+                })(i);
+            }
+            // location.hash = 'page1'; //每次页面重新加载时都回到page1
+            window.onhashchange = function (e) {
+                //当hash变化时，执行hashchange事件，该事件具有oldURL和newURL两个事件属性，分别代表前一个URL和目前的URL
+                var oldHash = e.oldURL.split('#')[1]; //取得前一个hash
+                var newHash = e.newURL.split('#')[1]; //取得当前hash
+                var oldPage = document.getElementById(oldHash);
+                var newPage = document.getElementById(newHash);
+                oldPage.classList.remove('cur'); //隐藏前一个page
+                newPage.classList.add('cur');  //显示当前page
+            };
+        }
+    </script>
+</body>
+
+</html>

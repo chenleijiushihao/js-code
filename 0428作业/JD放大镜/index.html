@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放大镜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .small-box {
+            margin: 30px 0 0 30px;
+            width: 360px;
+            height: 240px;
+            border: 1px slategray solid;
+            /* box-sizing: border-box; */
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .small-box .mask {
+            width: 180px;
+            height: 120px;
+            background-color: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            display: none;
+            cursor: move;
+        }
+
+        .small-box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .big-box {
+            position: absolute;
+            left: 394px;
+            top: 30px;
+            width: 720px;
+            height: 480px;
+            border: 1px slategray solid;
+            /* box-sizing: border-box; */
+            display: none;
+            overflow: hidden;
+        }
+
+        .big-box img {
+            width: 1440px;
+            height: 960px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fd1">
+        <div class="small-box">
+            <div class="mask"></div>
+            <img src="image/allen-iverson-of-sixers-graffiti-wall-1045534.jpg" alt="">
+        </div>
+        <div class="big-box">
+            <img src="image/allen-iverson-of-sixers-graffiti-wall-1045534.jpg" alt="">
+        </div>
+    </div>
+
+    <div id="fd2">
+        <div class="small-box">
+            <div class="mask"></div>
+            <img src="https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?cs=srgb&dl=people-across-on-intersection-1486222.jpg&fm=jpg" alt="">
+        </div>
+        <div class="big-box">
+            <img src="https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?cs=srgb&dl=people-across-on-intersection-1486222.jpg&fm=jpg" alt="">
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+
+   <!--      <script>
+        let $box = $('.small-box'),
+            $mask = $box.children('.mask'),
+            $bigBox = $('.big-box'),
+            $bigImg = $bigBox.children('img');
+
+        $box.on('mouseenter', function () {
+            $mask.css({
+                display: 'block',
+            })
+            $bigBox.css({
+                display: 'block',
+            })
+        }).on('mouseleave', function () {
+            $mask.css({
+                display: 'none',
+            })
+            $bigBox.css({
+                display: 'none',
+            })
+        }).on('mousemove', function (e) {
+            let o = $box.offset();
+
+            let t = e.pageY - o.top - $mask.height() / 2;
+            let l = e.pageX - o.left - $mask.width() / 2;
+            // console.log(t)
+            let maxT = $box.height() - $mask.height();
+            let maxL = $box.width() - $mask.width();
+            // console.log(maxT)
+
+            l = l < 0 ? 0 : (l > maxL ? maxL : l);
+            t = t < 0 ? 0 : (t > maxT ? maxT : t);
+            // console.log(t)
+            $mask.css({
+                left: l + 'px',
+                top: t + 'px',
+            })
+
+
+            let n = $bigBox.height() / $mask.height();
+            $bigImg.css({
+                left: -l * n + 'px',
+                top: -t * n + 'px',
+            })
+        })
+    </script>
+ -->
+
+
+    <!--  <script>
+        let box = document.querySelector('.small-box'),
+            mask = document.querySelector('.mask'),
+            bigBox = document.querySelector('.big-box'),
+            bigImg = bigBox.querySelector('img');
+        box.onmouseenter = function () {
+            mask.style.display = 'block';
+            bigBox.style.display = "block";
+        }
+        box.onmouseleave = function () {
+            mask.style.display = 'none';
+            bigBox.style.display = "none";
+        }
+        box.onmousemove = function (e) {
+
+            let o = offSet(this);
+            // console.log(o)
+            console.log(e.pageX)
+            let t = e.pageY - o.top - mask.clientHeight / 2;
+            // console.log(t)
+            let l = e.pageX - o.left - mask.clientWidth / 2;
+            // console.log(l,t)
+
+
+
+            let maxL = this.clientWidth - mask.clientWidth;
+            let maxT = this.clientHeight - mask.clientHeight;
+            // console.log(maxL, maxT)
+
+            l = l < 0 ? 0 : (l > maxL ? maxL : l);
+            t = t < 0 ? 0 : (t > maxT ? maxT : t);
+            mask.style.left = l + 'px';
+            mask.style.top = t + 'px';
+
+            let n = bigBox.clientHeight / mask.clientHeight;
+            bigImg.style.left = -l * n + 'px';
+            bigImg.style.top = -t * n + 'px';
+        }
+
+
+        // function offSet(ele) {
+        //     // 可以获取到 ele 这个元素到body的偏移量
+        //     let left = ele.offsetLeft,
+        //         top = ele.offsetTop;// 获取当前元素到父级参照物的偏移量
+        //     let parent = ele.offsetParent;// 获取父级参照物 
+        //     while (parent) {
+        //         // 若父级参照物存在；
+        //         left += (parent.clientLeft || 0) + parent.offsetLeft;
+        //         top += (parent.clientTop || 0) + parent.offsetTop;
+        //         parent = parent.offsetParent;
+        //     }
+        //     return {
+        //         left, top
+        //     }
+        // }
+
+
+
+
+
+        function offSet(element) {
+            let parent = element.offsetParent;
+            let top = element.offsetTop,
+                left = element.offsetLeft;
+            while (parent) {
+                left += parent.offsetLeft + (parent.clientLeft || 0);
+                top += parent.offsetTop + (parent.clientTop || 0);
+                parent = parent.offsetParent;
+            }
+            return {
+                top,
+                left
+            }
+        }
+
+    </script> -->
+</body>
+
+</html>

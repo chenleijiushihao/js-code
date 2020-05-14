@@ -11,7 +11,8 @@ let context = document.querySelector('.context'),
     item.t = 0,
         item.l = 0;
     item.onmousemove = function (e) {
-        let img = item.querySelector('img');
+        if (bigImg > body.clientWidth) 
+            let img = item.querySelector('img');
         // console.log(img)
         bigImgs.src = img.src;
         bigImg.style.display = "block";

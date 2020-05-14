@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>icon/16/say copy 2备份</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/16/say-copy-2备份" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="system-comment" transform="translate(3.000000, 3.000000)">
+            <path d="M17.1235425,4.12106314 C17.9702968,5.64411588 18.2875213,6.28530006 18.2875213,7.97703134 C18.2875213,12.3826174 14.193729,15.9540627 9.14376064,15.9540627 C9.07099835,15.9540627 8.99841975,15.9533145 8.92604525,15.9518384 L5,15.9518384 L3,16.5936691 L2.68744922,13.6257401 C1.02728518,12.1815436 0,10.1839494 0,7.97703134 C0,3.57144533 4.09379226,0 9.14376064,0 C10.8585961,0 12.4631748,0.411823966 13.8346393,1.12828923" id="形状" stroke="#1363B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill-rule="nonzero"></path>
+            <g id="分组" transform="translate(3.000000, 7.000000)" fill="#1363B6">
+                <circle id="椭圆形" cx="1.5" cy="1.5" r="1.5"></circle>
+                <circle id="椭圆形-copy" cx="6" cy="1.5" r="1.5"></circle>
+                <circle id="椭圆形-copy-2" cx="10.5" cy="1.5" r="1.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

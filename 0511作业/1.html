@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .main {
+            margin: 40px auto;
+            width: 500px;
+            text-align: center;
+        }
+
+        .nav {
+            display: flex;
+            position: relative;
+            top: 1px;
+        }
+
+        .nav>a {
+            box-sizing: border-box;
+            margin-right: 10px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            border: 1px solid #999;
+            padding: 0 20px;
+            text-decoration: none;
+            color: #333333;
+        }
+
+        .main>div {
+            box-sizing: border-box;
+            border: 1px solid #999;
+            line-height: 200px;
+            display: none;
+        }
+
+        .nav>a.active {
+            background: #ffda43;
+            border-bottom-color: #ffda43;
+        }
+
+        .main>div.active {
+            display: block;
+            background: #ffda43;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main" id="main">
+        <nav class="nav" id="nav">
+            <a href="#music" class="active">音乐</a>
+            <a href="#axe">乐器</a>
+            <a href="#draw">画画</a>
+        </nav>
+        <div class="active">音乐的内容</div>
+        <div>乐器的内容</div>
+        <div>画画的内容</div>
+    </div>
+
+    <!-- IMPORT JS -->
+    <script>
+        let main = document.querySelector('.main'),
+            nav = main.querySelector('.nav'),
+            list = nav.querySelectorAll('a'),
+            divs = main.querySelectorAll('div');
+
+        function tab(n) {
+            // n 对应的是点击的那一项的索引
+            [...list].forEach((item, index) => {
+                if (n == index) {
+                    item.classList.add('active');
+                    divs[index].classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                    divs[index].classList.remove('active');
+                }
+            })
+        }
+        function init() {
+            switch (location.hash) {
+                case '#music':
+                    tab(0)
+                    break;
+                case '#axe':
+                    tab(1)
+                    break;
+                case '#draw':
+                    tab(2)
+                    break;
+
+                default:
+                    // tab(0)
+                    break;
+            }
+        }
+        init();
+        window.onhashchange = function () {
+            // 只要hash发生改变
+            console.log(location.hash);
+            init();
+        }
+
+    </script>
+</body>
+
+</html>
